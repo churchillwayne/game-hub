@@ -6,7 +6,7 @@ import {
   SwitchThumb,
   SwitchHiddenInput,
 } from "@chakra-ui/react";
-import { useColorMode } from "../components/ui/color-mode";
+import { useColorMode } from "./color-mode";
 
 const ColourModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
