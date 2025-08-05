@@ -1,14 +1,33 @@
-import { Button, ButtonGroup } from "@chakra-ui/react";
-import ColourMode from "./ColourMode";
+import { Grid, GridItem, Show, useBreakpointValue } from "@chakra-ui/react";
+
+//import ColourMode from "./ColourMode";
+//<ColourMode />
 
 function App() {
+  const showAside = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
-    <>
-      <ColourMode />
-      <div>
-        <Button colorPalette="blue">Button</Button>
-      </div>
-    </>
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`,
+      }}
+    >
+      <GridItem area="nav" bg="coral">
+        Nav
+      </GridItem>
+      <Show when={showAside}>
+        <GridItem area="aside" bg="gold">
+          Aside
+        </GridItem>
+      </Show>
+      <GridItem area="main" bg="dodgerblue">
+        Main
+      </GridItem>
+    </Grid>
   );
 }
 
