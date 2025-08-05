@@ -1,6 +1,6 @@
 import { Grid, GridItem, Show, useBreakpointValue } from "@chakra-ui/react";
 import NavBar from "./components/ui/NavBar";
-import GameGrid from "./components/GameGrid";
+import GameGrid from "./components/ui/GameGrid";
 
 function App() {
   const showAside = useBreakpointValue({
