@@ -1,4 +1,3 @@
-import usePlatforms, { type Platform } from "@/hooks/usePlatforms";
 import {
   Menu,
   Button,
@@ -10,21 +9,17 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
-interface Props {
-  onSelectPlatform: (platform: Platform) => void;
-}
+// interface Props {
+//   onSelectSortOrder: (platform: Platform) => void;
+// }
 
-const PlatformSelector = ({ onSelectPlatform }: Props) => {
-  const { data, error } = usePlatforms();
-
-  if (error) return null;
-
+const SortSelector = () => {
   return (
     <Menu.Root>
       <Menu.Trigger asChild>
         <Button variant="outline" size="sm">
           <HStack gap={2}>
-            <Text>Platforms</Text>
+            <Text>Order by Relevance</Text>
             <Icon as={BsChevronDown} />
           </HStack>
         </Button>
@@ -32,6 +27,15 @@ const PlatformSelector = ({ onSelectPlatform }: Props) => {
       <Portal>
         <Menu.Positioner>
           <Menu.Content>
+            <MenuItem>Relevance</MenuItem>
+            <MenuItem>Date Added</MenuItem>
+            <MenuItem>Name</MenuItem>
+            <MenuItem>Released Date</MenuItem>
+            <MenuItem>Popularity</MenuItem>
+            <MenuItem>Average Rating</MenuItem>
+          </Menu.Content>
+
+          {/* <Menu.Content>
             {data.map((platform) => (
               <MenuItem
                 onClick={() => onSelectPlatform(platform)}
@@ -40,11 +44,11 @@ const PlatformSelector = ({ onSelectPlatform }: Props) => {
                 {platform.name}
               </MenuItem>
             ))}
-          </Menu.Content>
+          </Menu.Content> */}
         </Menu.Positioner>
       </Portal>
     </Menu.Root>
   );
 };
 
-export default PlatformSelector;
+export default SortSelector;
