@@ -23,7 +23,7 @@ const ColourModeSwitch = () => {
           <SwitchThumb />
         </SwitchControl>
       </SwitchRoot>
-      <Text>Dark Mode</Text>
+      <Text whiteSpace="nowrap">Dark Mode</Text>
     </HStack>
   );
   //return <ColorModeButton />;
