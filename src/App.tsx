@@ -9,12 +9,12 @@ import {
 import NavBar from "./components/ui/NavBar";
 import GameGrid from "./components/ui/GameGrid";
 import GenreList from "./components/ui/GenreList";
-import type { Genre } from "./hooks/useGenres";
 import { useState } from "react";
 import PlatformSelector from "./components/ui/PlatformSelector";
-import type { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/ui/SortSelector";
 import GameHeading from "./components/ui/GameHeading";
+import type { Genre } from "./services/genresService";
+import type { Platform } from "./services/platformsService";
 
 export interface GameQuery {
   genre: Genre | null;
