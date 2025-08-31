@@ -24,7 +24,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
     <>
       <Heading>Genres</Heading>
       <ChakraList.Root listStyleType="none">
-        {data.map((genre) => (
+        {data?.results.map((genre) => (
           <ChakraList.Item key={genre.id} paddingY="5px">
             <HStack>
               <Image
