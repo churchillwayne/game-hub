@@ -5,9 +5,10 @@ import {
   FaApple,
   FaLinux,
   FaAndroid,
+  FaQuestion,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
+import { SiNintendo, SiSega, SiAtari } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { HStack, Icon } from "@chakra-ui/react";
 import type { IconType } from "react-icons";
@@ -28,14 +29,26 @@ const PlatformIconList = ({ platforms }: Props) => {
     ios: MdPhoneIphone,
     web: BsGlobe,
     android: FaAndroid,
+    sega: SiSega,
+    commodoreamiga: FaQuestion,
+    atari: SiAtari,
+    "3do": FaQuestion,
+    neogeo: FaQuestion,
   };
 
   return (
-    <HStack marginY={1}>
-      {platforms.map((platform) => (
-        <Icon as={iconMap[platform.slug]} key={platform.id} color="gray.500" />
-      ))}
-    </HStack>
+    <>
+      <HStack marginY={1}>
+        {platforms.map((platform) => (
+          <Icon
+            as={iconMap[platform.slug.replace("-", "")]}
+            key={platform.id}
+            color="gray.500"
+          />
+        ))}
+      </HStack>
+      {/* {platforms.map((platform) => console.log(platform.slug.replace("-", "")))} */}
+    </>
   );
 };
 
