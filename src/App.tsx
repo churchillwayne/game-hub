@@ -13,12 +13,10 @@ import { useState } from "react";
 import PlatformSelector from "./components/ui/PlatformSelector";
 import SortSelector from "./components/ui/SortSelector";
 import GameHeading from "./components/ui/GameHeading";
-import type { Genre } from "./services/genresService";
-import type { Platform } from "./services/platformsService";
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   sortOrder: string;
   searchText: string;
 }
@@ -50,8 +48,10 @@ function App() {
       <Show when={showAside}>
         <Box px={5}>
           <GenreList
-            selectedGenre={gameQuery.genre}
-            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+            selectedGenreId={gameQuery.genreId}
+            onSelectGenre={(genre) =>
+              setGameQuery({ ...gameQuery, genreId: genre.id })
+            }
           />
         </Box>
       </Show>
@@ -61,7 +61,7 @@ function App() {
           <HStack gap={5} marginBottom={5}>
             <PlatformSelector
               onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
+                setGameQuery({ ...gameQuery, platformId: platform.id })
               }
             />
             <SortSelector
