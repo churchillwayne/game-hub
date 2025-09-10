@@ -9,25 +9,15 @@ import {
 import NavBar from "./components/ui/NavBar";
 import GameGrid from "./components/ui/GameGrid";
 import GenreList from "./components/ui/GenreList";
-import { useState } from "react";
 import PlatformSelector from "./components/ui/PlatformSelector";
 import SortSelector from "./components/ui/SortSelector";
 import GameHeading from "./components/ui/GameHeading";
-
-export interface GameQuery {
-  genreId?: number;
-  platformId?: number;
-  sortOrder: string;
-  searchText: string;
-}
 
 function App() {
   const showAside = useBreakpointValue({
     base: false,
     lg: true,
   });
-
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
     <Grid
@@ -41,37 +31,21 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar
-          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
-        />
+        <NavBar />
       </GridItem>
       <Show when={showAside}>
         <Box px={5}>
-          <GenreList
-            selectedGenreId={gameQuery.genreId}
-            onSelectGenre={(genre) =>
-              setGameQuery({ ...gameQuery, genreId: genre.id })
-            }
-          />
+          <GenreList />
         </Box>
       </Show>
       <GridItem area="main">
         <Box px={5}>
-          <GameHeading gameQuery={gameQuery}></GameHeading>
+          <GameHeading />
           <HStack gap={5} marginBottom={5}>
-            <PlatformSelector
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platformId: platform.id })
-              }
-            />
-            <SortSelector
-              sortOrder={gameQuery.sortOrder}
-              onSelectSortOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
-            />
+            <PlatformSelector />
+            <SortSelector />
           </HStack>
-          <GameGrid gameQuery={gameQuery} />
+          <GameGrid />
         </Box>
       </GridItem>
     </Grid>
