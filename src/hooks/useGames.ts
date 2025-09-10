@@ -1,6 +1,6 @@
 import type { GameQuery } from "@/App";
 import type { FetchResponse } from "@/services/apiClient";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import gamesService, { type Game } from "../services/gamesService";
 import ms from "ms";
 
