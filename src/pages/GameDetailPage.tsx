@@ -2,6 +2,7 @@ import ExpandableText from "@/components/expandableText";
 import CriticScore from "@/components/ui/CriticScore";
 import DefinitionItem from "@/components/ui/DefinitionItem";
 import GameAttributes from "@/components/ui/GameAttributes";
+import GameTrailer from "@/components/ui/GameTrailer";
 import useGame from "@/hooks/useGame";
 import {
   Grid,
@@ -27,6 +28,7 @@ const GameDetailPage = () => {
       </Heading>
       <ExpandableText>{game.description_raw}</ExpandableText>
       <GameAttributes game={game} />
+      <GameTrailer gameId={game.id} />
     </>
   );
 };
