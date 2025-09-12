@@ -3,8 +3,8 @@ import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "@/services/image-url";
 import Emoji from "./Emoji";
-import type { Game } from "@/services/gamesService";
 import { Link } from "react-router-dom";
+import type { Game } from "@/entities/Game";
 
 interface Props {
   game: Game;
