@@ -15,9 +15,6 @@ const GameTrailer = ({ gameId }: Props) => {
 
   return firstTrailer ? (
     <>
-      <Heading as="h1" marginY={5} fontSize="5xl">
-        Trailer
-      </Heading>
       <video
         src={firstTrailer.data[480]}
         poster={firstTrailer.preview}
