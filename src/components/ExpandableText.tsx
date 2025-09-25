@@ -1,5 +1,5 @@
 import { Button, Text } from "@chakra-ui/react";
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 
 interface Props {
   children: string;

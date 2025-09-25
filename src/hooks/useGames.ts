@@ -3,7 +3,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import gamesService from "../services/gamesService";
 import ms from "ms";
 import useGameQueryStore from "@/store";
-import type { Game } from "@/entities/Game";
+import type Game from "@/entities/Game";
 
 const useGames = ()=>   
 {

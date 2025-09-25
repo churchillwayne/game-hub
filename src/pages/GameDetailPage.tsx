@@ -1,4 +1,4 @@
-import ExpandableText from "@/components/expandableText";
+import ExpandableText from "@/components/ExpandableText";
 import GameAttributes from "@/components/ui/GameAttributes";
 import GameScreenshots from "@/components/ui/GameScreenshots";
 import GameTrailer from "@/components/ui/GameTrailer";
@@ -14,7 +14,7 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spaceY={5}>
+    <SimpleGrid columns={{ base: 1, md: 2 }}>
       <GridItem>
         <Heading as="h1" marginY={5} fontSize="5xl">
           {game.name}

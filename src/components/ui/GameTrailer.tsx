@@ -1,5 +1,5 @@
 import useGameTrailers from "@/hooks/useGameTrailers";
-import { Heading, Spinner } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
 
 interface Props {
   gameId: number;
